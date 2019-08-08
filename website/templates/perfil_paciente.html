@@ -1,0 +1,27 @@
+{% extends 'shared/layout.html' %}
+
+{% block conteudo %}
+{% for paciente in pacientes %}
+<h1> Meu Cadastro - {{paciente.nome}} {{paciente.sobrenome}}  </h1>
+
+<h2> Dados Pessoais </h2> 
+<p>Data de Nascimento: {{paciente.data_nasc}}
+    {{paciente.genero}}
+    CPF: {{paciente.cpf}}
+    Telefone: {{paciente.telefone}}
+    Endereço: {{paciente.rua}} , {{paciente.complemento}} - {{paciente.bairro}} - {{paciente.cidade}} Estado: {{paciente.uf}}
+    CEP: {{paciente.cep}}
+    Email: {{paciente.email}}
+</p>
+
+<h2> Agendar Consultas </h2>
+
+<h2> Consultas Agendadas </h2>
+
+<h2> Sair </h2>
+
+{% endfor %}
+    
+
+
+{% endblock %} -->

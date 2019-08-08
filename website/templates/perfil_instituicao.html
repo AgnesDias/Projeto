@@ -1,0 +1,10 @@
+{% extends 'shared/layout.html' %}
+
+{% block conteudo %}
+
+<h1> Cadastro da Instituição </h1>
+{{msg}}
+<form action="/" method="post">
+    {% csrf_token %}
+
+{% endblock %}

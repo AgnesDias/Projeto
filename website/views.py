@@ -22,7 +22,7 @@ def cadastro(request):
 
           # checar se o email já está cadastrado
           email_digitado = request.POST.get('email')
-          em_uso = Pessoa.objects.filter(email = email_digitado).first()
+          em_uso = Paciente.objects.filter(email = email_digitado).first()
 
           if(em_uso is None):
                paciente.nome = request.POST.get('nome')
@@ -78,3 +78,18 @@ def cadastro_instituicao(request):
         
      return render( request, 'index.html', contexto)
 
+   #função perfil do paciente
+def perfil_paciente(request):
+     pacientes = Paciente.objects.filter(paciente.email)
+     contexto = {
+     'pacientes':pacientes
+     }
+     return render(request, 'perfil_paciente.html', contexto)
+
+   #função perfil da instituição
+def perfil_instituicao(request):
+     instituicao = Instituicao.objects.all()
+     contexto = {
+   'instituicao':instituicao
+    }
+     return render(request, 'perfil_instituicao.html', contexto)
